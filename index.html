@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Gift</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    overflow:hidden;
+    transition:1s;
+}
+
+#gift{
+    font-size:120px;
+    cursor:pointer;
+    animation: float 1s infinite alternate;
+}
+
+@keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(-10px);}
+}
+
+.text{
+    display:none;
+    font-size:50px;
+    text-align:center;
+    animation: fade 1s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="gift">🎁</div>
+
+<div id="text1" class="text">
+    👀 Ê... <br>
+    Hình như có gì phía sau bạn kìa...
+</div>
+
+<div id="text2" class="text">
+    🤡 NHÌN CÁI CC 😭
+</div>
+
+<script>
+document.getElementById("gift").onclick = () => {
+
+    document.getElementById("gift").style.display = "none";
+
+    document.body.style.background = "#050505";
+
+    document.getElementById("text1").style.display = "block";
+
+    setTimeout(() => {
+
+        document.getElementById("text1").style.display = "none";
+
+        document.body.style.background = "darkred";
+
+        document.getElementById("text2").style.display = "block";
+
+    }, 3000);
+}
+</script>
+
+</body>
+</html>
